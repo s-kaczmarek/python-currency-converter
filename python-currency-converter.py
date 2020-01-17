@@ -39,7 +39,7 @@ def convert_currency():
 if len(sys.argv) == 4:
     if arguments_validator():
         convert_currency()
-elif sys.argv[1] == "-h":
+elif (len(sys.argv) == 2) and (sys.argv[1] == "-h"):
     help()
 else:
     print("Wrong argument, check -h for help")
