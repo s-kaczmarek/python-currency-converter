@@ -12,6 +12,8 @@ def help():
 def arguments_validator():
     if (sys.argv[1].isdigit()) and (len(sys.argv[2]) == 3) and (len(sys.argv[3]) == 3):
         return True
+    elif (sys.argv[1].replace('.', '', 1).isdigit()):
+        return True
     else:
         return False
 
@@ -39,6 +41,8 @@ def convert_currency():
 if len(sys.argv) == 4:
     if arguments_validator():
         convert_currency()
+    else:
+        print("Your arguments didn't passed validation!")
 elif (len(sys.argv) == 2) and (sys.argv[1] == "-h"):
     help()
 else:
